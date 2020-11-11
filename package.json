@@ -1,0 +1,42 @@
+{
+  "name": "template",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --config jest.config.local.js --testTimeout=50000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/otusqa/jestTemplate.git"
+  },
+  "author": "mnmlsniper",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/otusqa/jestTemplate/issues"
+  },
+  "homepage": "https://github.com/otusqa/jestTemplate#readme",
+  "devDependencies": {
+    "@babel/preset-env": "^7.12.1",
+    "babel-eslint": "^10.1.0",
+    "babel-jest": "^26.6.2",
+    "eslint": "^7.11.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jest": "^24.1.0",
+    "husky": "^4.3.0",
+    "jest-cli": "^26.6.2",
+    "lint-staged": "^10.4.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "./src/*.{js,jsx,ts,tsx}": [
+      "npx prettier --write",
+      "eslint src/**/*.js specs/*.js --fix-dry-run"
+    ]
+  }
+}
