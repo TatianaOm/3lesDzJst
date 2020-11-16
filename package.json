@@ -39,5 +39,8 @@
       "npx prettier --write",
       "eslint src/**/*.js specs/*.js --fix-dry-run"
     ]
+  },
+  "dependencies": {
+    "jshint": "^2.12.0"
   }
 }
